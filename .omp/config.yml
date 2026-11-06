@@ -1,0 +1,13 @@
+# Verified against OMP 18.16.0 and the installed openai-codex catalog.
+# This file contains model selectors only; never add provider credentials here.
+modelRoles:
+  default: "openai-codex/gpt-6-luna:medium"
+  smol: "openai-codex/gpt-6-luna:low"
+  slow: "openai-codex/gpt-6.1-terra:high"
+  plan: "openai-codex/gpt-6.1-terra:high"
+  task: "openai-codex/gpt-6-luna:medium"
+  advisor: "openai-codex/gpt-6.1-terra:high"
+  judge: "openai-codex/gpt-6-luna:medium"
+  memory: "openai-codex/gpt-6-luna:low"
+  commit: "openai-codex/gpt-6-luna:medium"
+  tiny: "openai-codex/gpt-6-luna:low"

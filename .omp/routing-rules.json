@@ -1,0 +1,86 @@
+{
+  "skillOrder": [
+    "agent-workflow-engineering",
+    "smart-contract-defi-security",
+    "blockchain-systems",
+    "production-sre",
+    "architecture-systems",
+    "backend-concurrency-performance",
+    "engineering-core"
+  ],
+  "rules": [
+    {
+      "id": "agent-security-and-workflows",
+      "patterns": [
+        "\\b(agent|subagent|skill|prompt|context)\\s+(routing|orchestration|discovery|activation|engineering)\\b",
+        "\\b(prompt injection|jailbreak|tool authorization|tool permission|model routing|mcp|context window|token cost)\\b",
+        "\\b(ignore|override|bypass)\\b.{0,40}\\b(instruction|agents\\.md|security|gate|policy)\\b",
+        "\\b(malicious|untrusted)\\b.{0,40}\\b(repository|instruction|prompt|content)\\b",
+        "\\b(skill collision|duplicate skill|unavailable model|missing tool)\\b",
+        "\\b(parallel (agent|subagent)s?|concurrent (writer|agent)s?)\\b"
+      ],
+      "skills": ["agent-workflow-engineering"]
+    },
+    {
+      "id": "smart-contract-and-defi-security",
+      "patterns": [
+        "\\b(solidity|evm|smart contract|anchor program|solana program|move contract|cairo contract)\\b",
+        "\\b(reentrancy|delegatecall|upgradeability|signature malleability|access control|replay protection)\\b",
+        "\\b(defi|amm|dex|rfq|oracle|slippage|partial fill|mev|liquidation|flash loan)\\b",
+        "\\b(audit|exploit|vulnerability)\\b.{0,50}\\b(contract|protocol|vault|pool|token)\\b"
+      ],
+      "skills": ["smart-contract-defi-security"]
+    },
+    {
+      "id": "blockchain-data-and-execution",
+      "patterns": [
+        "\\b(blockchain|chain|indexer|block index|event index|multi-chain)\\b",
+        "\\b(reorg|canonical chain|finality|confirmation|checkpoint|backfill)\\b",
+        "\\b(rpc|provider failover|transaction lifecycle|transaction simulation|cross-chain|bridge message)\\b",
+        "\\b(nonce|mempool|receipt|block hash|log index)\\b"
+      ],
+      "skills": ["blockchain-systems"]
+    },
+    {
+      "id": "production-and-sre",
+      "patterns": [
+        "\\b(incident|outage|production failure|on-call|mitigation|postmortem)\\b",
+        "\\b(kubernetes|eks|helm|terraform|infrastructure as code|ci/cd)\\b",
+        "\\b(slo|sli|error budget|opentelemetry|observability|disaster recovery)\\b",
+        "\\b(rollout|rollback|canary|blue-green|runbook|secrets management)\\b"
+      ],
+      "skills": ["production-sre"]
+    },
+    {
+      "id": "architecture-and-distributed-systems",
+      "patterns": [
+        "\\b(architect|architecture|system design|design a|design the)\\b",
+        "\\b(distributed system|event-driven|message broker|consistency model|consensus)\\b",
+        "\\b(system boundary|interface contract|capacity planning|failure mode)\\b",
+        "\\b(migration|backward compatibility|multi-chain|multi-region)\\b"
+      ],
+      "skills": ["architecture-systems"]
+    },
+    {
+      "id": "backend-concurrency-and-performance",
+      "patterns": [
+        "\\b(race condition|deadlock|livelock|data race|concurrency|synchronization|single-flight)\\b",
+        "\\b(performance regression|latency|throughput|profil|flamegraph|benchmark|query plan)\\b",
+        "\\b(api|postgres(?:ql)?|redis|job queue|worker|node\\.js|typescript|bun|rust)\\b.{0,60}\\b(race|duplicate|deadlock|contention|latency|throughput|performance|slow|lock|transaction|idempoten\\w*)\\b",
+        "\\b(race|duplicate|deadlock|contention|latency|throughput|performance|slow|lock|transaction|idempoten\\w*)\\b.{0,60}\\b(api|postgres(?:ql)?|redis|job queue|worker|node\\.js|typescript|bun|rust)\\b",
+        "\\b(idempotency key|distributed lock|optimistic lock|transaction isolation)\\b"
+      ],
+      "skills": ["backend-concurrency-performance"]
+    },
+    {
+      "id": "core-engineering",
+      "patterns": [
+        "\\b(fix|bug|debug|implement|add|update|remove|change|rename|refactor|review|test|validate|validation|build|compile|lint|document(?:ation)?)\\b",
+        "\\b(error|failure|failing|incorrect|regression|unexpected|broken|slow)\\b",
+        "\\b(code|function|class|module|repository|pull request|pr|diff)\\b",
+        "\\b(requirement|acceptance criteria|ambiguous|specification)\\b"
+      ],
+      "skills": ["engineering-core"]
+    }
+  ]
+}
